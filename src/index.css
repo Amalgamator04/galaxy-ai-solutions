@@ -2,41 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Galaxy Portfolio Design System - Futuristic & Interactive */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
+    /* Galaxy Theme - Light Mode (Day) */
+    --background: 210 100% 97%;
+    --foreground: 222 84% 4.9%;
+    --card: 210 100% 98%;
+    --card-foreground: 222 84% 4.9%;
+    --popover: 210 100% 98%;
+    --popover-foreground: 222 84% 4.9%;
+    
+    /* Galaxy Primary Colors */
+    --primary: 250 70% 60%;
     --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
+    --primary-glow: 250 80% 70%;
+    --primary-dim: 250 60% 40%;
+    
+    /* Galaxy Secondary Colors */
+    --secondary: 280 60% 50%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-glow: 280 70% 60%;
+    
+    /* Galaxy Accent Colors */
+    --accent: 320 70% 60%;
+    --accent-foreground: 210 40% 98%;
+    --accent-glow: 320 80% 70%;
+    
+    /* Cosmic Colors */
+    --cosmic-blue: 220 80% 60%;
+    --cosmic-purple: 270 70% 60%;
+    --cosmic-pink: 330 80% 70%;
+    --cosmic-teal: 180 70% 50%;
+    --cosmic-gold: 45 90% 60%;
+    
+    /* UI Elements */
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 250 70% 60%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    
+    /* Glass & Effects */
+    --glass-bg: 210 100% 98%;
+    --glass-border: 250 70% 60%;
+    --glass-shadow: 250 70% 60%;
+    
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--cosmic-blue)), hsl(var(--cosmic-purple)), hsl(var(--cosmic-pink)));
+    --gradient-galaxy: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-aurora: linear-gradient(90deg, hsl(var(--cosmic-teal)), hsl(var(--cosmic-blue)), hsl(var(--cosmic-purple)));
+    --gradient-sunset: linear-gradient(180deg, hsl(45 90% 70%), hsl(30 90% 60%), hsl(320 70% 60%));
+    --gradient-night: linear-gradient(180deg, hsl(250 60% 20%), hsl(270 70% 10%), hsl(220 80% 5%));
+    
+    /* Shadows */
+    --shadow-cosmic: 0 10px 30px -5px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.4);
+    --shadow-aurora: 0 0 50px hsl(var(--cosmic-teal) / 0.3);
+    
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +84,57 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Galaxy Theme - Dark Mode (Night) */
+    --background: 220 80% 5%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    --card: 220 70% 8%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    --popover: 220 70% 8%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    
+    /* Dark Mode Galaxy Colors */
+    --primary: 250 80% 70%;
+    --primary-foreground: 220 80% 5%;
+    --primary-glow: 250 90% 80%;
+    --primary-dim: 250 70% 50%;
+    
+    --secondary: 280 70% 60%;
+    --secondary-foreground: 220 80% 5%;
+    --secondary-glow: 280 80% 70%;
+    
+    --accent: 320 80% 70%;
+    --accent-foreground: 220 80% 5%;
+    --accent-glow: 320 90% 80%;
+    
+    /* Dark Cosmic Colors */
+    --cosmic-blue: 220 90% 70%;
+    --cosmic-purple: 270 80% 70%;
+    --cosmic-pink: 330 90% 80%;
+    --cosmic-teal: 180 80% 60%;
+    --cosmic-gold: 45 100% 70%;
+    
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 250 80% 70%;
+    
+    /* Dark Glass & Effects */
+    --glass-bg: 220 70% 8%;
+    --glass-border: 250 80% 70%;
+    --glass-shadow: 250 80% 70%;
+    
+    /* Dark Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--cosmic-blue)), hsl(var(--cosmic-purple)), hsl(var(--cosmic-pink)));
+    --gradient-galaxy: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-aurora: linear-gradient(90deg, hsl(var(--cosmic-teal)), hsl(var(--cosmic-blue)), hsl(var(--cosmic-purple)));
+    --gradient-sunset: linear-gradient(180deg, hsl(45 100% 80%), hsl(30 100% 70%), hsl(320 80% 70%));
+    --gradient-night: linear-gradient(180deg, hsl(250 70% 30%), hsl(270 80% 20%), hsl(220 90% 10%));
+    
+    /* Dark Shadows */
+    --shadow-cosmic: 0 10px 30px -5px hsl(var(--primary) / 0.5);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.6);
+    --shadow-aurora: 0 0 60px hsl(var(--cosmic-teal) / 0.5);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +152,163 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-space overflow-x-hidden;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass Morphism Components */
+  .glass {
+    @apply backdrop-blur-md border border-white/20 bg-white/10 dark:bg-black/20;
+    box-shadow: var(--shadow-cosmic);
+  }
+  
+  .glass-strong {
+    @apply backdrop-blur-lg border border-white/30 bg-white/20 dark:bg-black/30;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .cosmic-card {
+    @apply glass rounded-2xl p-6 transition-all duration-300 hover:scale-105;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  }
+  
+  .cosmic-card:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-5px) scale(1.02);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-cosmic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .aurora-text {
+    background: var(--gradient-aurora);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Animated Backgrounds */
+  .cosmic-bg {
+    background: var(--gradient-cosmic);
+    background-size: 200% 200%;
+    animation: cosmic-flow 6s ease-in-out infinite;
+  }
+  
+  .aurora-bg {
+    background: var(--gradient-aurora);
+    background-size: 200% 200%;
+    animation: aurora-wave 8s ease-in-out infinite;
+  }
+  
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+  
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  /* Skill Badge */
+  .skill-badge {
+    @apply glass px-4 py-2 rounded-full text-sm font-medium transition-all duration-300;
+    @apply hover:bg-primary/20 hover:border-primary/40 hover:scale-110;
+  }
+  
+  /* Interactive Button */
+  .cosmic-button {
+    @apply glass-strong px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+    @apply hover:bg-primary/30 hover:border-primary/60 hover:scale-105 hover:shadow-glow;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.2), rgba(var(--secondary-rgb), 0.1));
+  }
+  
+  /* Service Card */
+  .service-card {
+    @apply cosmic-card min-h-[300px] group cursor-pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-aurora);
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes cosmic-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  @keyframes aurora-wave {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 0% 100%; }
+    75% { background-position: 100% 50%; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.3); }
+  }
+  
+  @keyframes day-night-cycle {
+    0% { transform: translateX(-100vw) rotate(-90deg); }
+    25% { transform: translateX(25vw) rotate(0deg); }
+    50% { transform: translateX(50vw) rotate(45deg); }
+    75% { transform: translateX(75vw) rotate(90deg); }
+    100% { transform: translateX(200vw) rotate(180deg); }
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+  
+  @keyframes meteor {
+    0% { transform: translateX(-100px) translateY(-100px) rotate(45deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateX(100vw) translateY(100vh) rotate(45deg); opacity: 0; }
+  }
+  
+  /* Custom Font Classes */
+  .font-space {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  /* Responsive Utilities */
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+  }
+  
+  .container-width {
+    @apply max-w-7xl mx-auto;
   }
 }
