@@ -75,7 +75,7 @@ export function Services() {
             return (
               <div
                 key={service.title}
-                className="service-card"
+                className="service-card group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Icon & Title */}
