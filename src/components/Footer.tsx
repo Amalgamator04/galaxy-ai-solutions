@@ -50,8 +50,8 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Transforming businesses with data analytics and AI automation. 
-              From dashboards to intelligent systems, we build solutions that work.
+              Based in New Delhi & Noida, serving clients remotely worldwide. 
+              Transforming businesses with data analytics, Excel automation, and AI solutions.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social) => {
@@ -120,8 +120,9 @@ export function Footer() {
                 <span className="text-muted-foreground">contact@prabhavvanshika.dev</span>
               </div>
               <div className="space-y-1">
-                <div className="font-medium text-cosmic-pink">Service Areas:</div>
-                <div className="text-muted-foreground">Delhi, Mumbai, Jaipur, Bengaluru</div>
+                <div className="font-medium text-cosmic-pink">Base Location:</div>
+                <div className="text-muted-foreground">New Delhi & Noida, India</div>
+                <div className="text-muted-foreground">Remote work worldwide</div>
               </div>
             </div>
           </div>
@@ -144,10 +145,11 @@ export function Footer() {
           {/* Additional Credits */}
           <div className="mt-6 pt-6 border-t border-border/30 text-center">
             <div className="flex flex-wrap justify-center gap-4 text-xs text-muted-foreground">
-              <span>🚀 Specializing in Python & AI</span>
-              <span>📊 Power BI & Streamlit Experts</span>
-              <span>🤖 Custom Chatbot Solutions</span>
-              <span>📈 Excel Automation Masters</span>
+              <span>🏠 Based in Delhi & Noida</span>
+              <span>🌐 Remote Work Globally</span>
+              <span>📊 Excel Analytics Experts</span>
+              <span>🤖 Custom AI Solutions</span>
+              <span>📈 Data Cleaning Masters</span>
             </div>
           </div>
         </div>

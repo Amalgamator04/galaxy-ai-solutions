@@ -29,16 +29,17 @@ export function Hero() {
 
           <div className="max-w-3xl mx-auto space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              From automating dashboards to deploying AI agents, we provide complete analytics solutions. 
-              With expertise in Python, Excel, Power BI, FastAPI, and Streamlit, we've helped 5+ clients 
-              across India build scalable, ethical, and beautiful AI tools.
+              Based in <span className="text-cosmic-teal font-semibold">New Delhi & Noida</span>, 
+              working <span className="text-cosmic-purple font-semibold">remotely with clients worldwide</span>. 
+              From Excel data cleaning and automation to deploying intelligent AI systems, we provide 
+              complete analytics solutions with expertise in Python, Power BI, FastAPI, and advanced Excel techniques.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <span className="skill-badge">🏙️ Delhi</span>
-              <span className="skill-badge">🌆 Mumbai</span>
-              <span className="skill-badge">🏛️ Jaipur</span>
-              <span className="skill-badge">🏢 Bengaluru</span>
+              <span className="skill-badge">🏠 Delhi & Noida Base</span>
+              <span className="skill-badge">🌐 Remote Worldwide</span>
+              <span className="skill-badge">📊 Excel Masters</span>
+              <span className="skill-badge">🤖 AI Specialists</span>
             </div>
           </div>
 

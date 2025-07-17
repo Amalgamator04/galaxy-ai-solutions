@@ -38,9 +38,9 @@ export function Services() {
     },
     {
       icon: FileSpreadsheet,
-      title: "Excel Automation & Reports",
-      description: "Turn messy Excel sheets into clean, automated files with formulas, pivot charts, and logic-driven reporting.",
-      features: ["Data Cleaning", "Automated Reports", "Pivot Tables", "Formula Optimization"],
+      title: "Excel Data Analytics & Automation",
+      description: "Transform messy Excel sheets into clean, automated analytics powerhouses with advanced data cleaning, pivot automation, and intelligent reporting systems.",
+      features: ["Advanced Data Cleaning", "Automated Pivot Tables", "VBA Scripting", "Formula Optimization", "Data Validation", "Interactive Dashboards"],
       color: "text-cosmic-gold",
       gradient: "from-cosmic-gold/20 to-cosmic-blue/10"
     },

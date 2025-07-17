@@ -66,10 +66,10 @@ export function Contact() {
   ]
 
   const serviceAreas = [
-    { city: "Delhi", emoji: "🏛️", description: "Government & Enterprise" },
-    { city: "Mumbai", emoji: "🌆", description: "Finance & Startups" },
-    { city: "Jaipur", emoji: "🏰", description: "Traditional & Modern Business" },
-    { city: "Bengaluru", emoji: "🏢", description: "Tech & Innovation" }
+    { city: "New Delhi", emoji: "🏛️", description: "Headquarters & Base Location" },
+    { city: "Noida", emoji: "🏢", description: "Secondary Office & Tech Hub" },
+    { city: "Remote Work", emoji: "🌐", description: "Worldwide Client Support" },
+    { city: "Consultations", emoji: "💼", description: "Virtual & On-site Available" }
   ]
 
   return (
@@ -182,7 +182,7 @@ export function Contact() {
             {/* Service Areas */}
             <div className="cosmic-card">
               <h3 className="text-xl font-semibold mb-4 gradient-text">
-                Service Areas
+                Service Coverage
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {serviceAreas.map((area) => (
@@ -198,9 +198,9 @@ export function Contact() {
             {/* Availability */}
             <div className="cosmic-card">
               <h3 className="text-xl font-semibold mb-4 gradient-text">
-                Availability
+                Availability & Approach
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-cosmic-teal" />
                   <div>
@@ -211,8 +211,29 @@ export function Contact() {
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-cosmic-purple" />
                   <div>
-                    <div className="font-medium">Working Hours</div>
-                    <div className="text-sm text-muted-foreground">Mon-Fri, 9 AM - 6 PM IST</div>
+                    <div className="font-medium">Base Location</div>
+                    <div className="text-sm text-muted-foreground">New Delhi & Noida, India</div>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h4 className="font-medium text-sm">Work Approach:</h4>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 rounded-full bg-cosmic-teal" />
+                      <span>Remote-first</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 rounded-full bg-cosmic-purple" />
+                      <span>Global timezone</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 rounded-full bg-cosmic-pink" />
+                      <span>On-site visits</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 rounded-full bg-cosmic-gold" />
+                      <span>Agile delivery</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -227,8 +248,10 @@ export function Contact() {
               Ready to Start Your Data Journey?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Whether you need a simple Excel automation or a complex AI system, 
-              we're here to help you succeed with data-driven solutions.
+              Working remotely from New Delhi & Noida, we serve clients globally with 
+              data analytics, Excel automation, and AI solutions. Whether you need a simple 
+              spreadsheet cleanup or a complex machine learning system, we're here to help 
+              you succeed with remote-first, data-driven solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="cosmic-button">

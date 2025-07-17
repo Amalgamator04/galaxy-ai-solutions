@@ -5,9 +5,9 @@ export function Testimonials() {
   const testimonials = [
     {
       name: "Rajat",
-      location: "Delhi",
-      role: "Business Owner",
-      content: "They simplified our messy Excel into live dashboards! The team transformed our chaotic data into beautiful, interactive reports that actually help us make decisions.",
+      location: "Remote Client",
+      role: "Business Owner, Delhi",
+      content: "They simplified our messy Excel into live dashboards! Working remotely, they transformed our chaotic data into beautiful, interactive reports that actually help us make decisions.",
       rating: 5,
       emoji: "✨",
       color: "text-cosmic-blue"
@@ -50,9 +50,9 @@ export function Testimonials() {
     },
     {
       name: "Priya",
-      location: "Mumbai",
-      role: "Marketing Director",
-      content: "The Excel automation saved us 20 hours per week. What used to take our team days now happens automatically with beautiful reports delivered daily.",
+      location: "International",
+      role: "Operations Director, UAE",
+      content: "Working across time zones was seamless. The Excel automation saved us 20 hours per week. What used to take our team days now happens automatically with beautiful reports delivered daily.",
       rating: 5,
       emoji: "⚡",
       color: "text-cosmic-blue"
@@ -128,16 +128,16 @@ export function Testimonials() {
           <div className="cosmic-card">
             <div className="grid md:grid-cols-4 gap-8 text-center">
               <div className="space-y-2">
-                <div className="text-3xl font-bold gradient-text">5+</div>
-                <div className="text-sm text-muted-foreground">Happy Clients</div>
+                <div className="text-3xl font-bold gradient-text">15+</div>
+                <div className="text-sm text-muted-foreground">Remote Clients</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold gradient-text">15+</div>
+                <div className="text-3xl font-bold gradient-text">25+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold gradient-text">4</div>
-                <div className="text-sm text-muted-foreground">Cities Served</div>
+                <div className="text-3xl font-bold gradient-text">3</div>
+                <div className="text-sm text-muted-foreground">Countries Served</div>
               </div>
               <div className="space-y-2">
                 <div className="text-3xl font-bold gradient-text">100%</div>
@@ -149,16 +149,16 @@ export function Testimonials() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <div className="space-y-4">
-            <p className="text-lg text-muted-foreground">
-              Ready to become our next success story?
-            </p>
-            <div className="space-y-2">
-              <p className="text-sm text-muted-foreground">
-                Join businesses across Delhi, Mumbai, Jaipur & Bengaluru
+            <div className="space-y-4">
+              <p className="text-lg text-muted-foreground">
+                Ready to become our next success story?
               </p>
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">
+                  Serving clients remotely from New Delhi & Noida to worldwide destinations
+                </p>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
