@@ -46,7 +46,7 @@ export function Footer() {
                 <Zap className="w-5 h-5 text-white" />
               </div>
               <div className="font-bold text-lg gradient-text">
-                P&V Analytics
+                Protonest
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -117,7 +117,7 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-cosmic-purple" />
-                <span className="text-muted-foreground">contact@prabhavvanshika.dev</span>
+                <span className="text-muted-foreground">protonest@gmail.com</span>
               </div>
               <div className="space-y-1">
                 <div className="font-medium text-cosmic-pink">Base Location:</div>
@@ -132,7 +132,7 @@ export function Footer() {
         <div className="border-t border-border/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Prabhav Sharma & Vanshika. All rights reserved.
+              © {new Date().getFullYear()} Protonest. All rights reserved.
             </div>
             
             <div className="flex items-center space-x-1 text-sm text-muted-foreground">

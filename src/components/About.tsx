@@ -3,10 +3,10 @@ import { Target, Users, Globe, Award } from 'lucide-react'
 
 export function About() {
   const stats = [
-    { icon: Users, label: "Remote Clients", value: "15+", color: "text-cosmic-blue" },
-    { icon: Globe, label: "Countries Served", value: "3", color: "text-cosmic-purple" },
-    { icon: Target, label: "Projects Completed", value: "25+", color: "text-cosmic-pink" },
-    { icon: Award, label: "Years Experience", value: "3+", color: "text-cosmic-teal" }
+    { icon: Users, label: "Remote Clients", value: "5+", color: "text-cosmic-blue" },
+    { icon: Globe, label: "States Served", value: "5+", color: "text-cosmic-purple" },
+    { icon: Target, label: "Projects Completed", value: "10+", color: "text-cosmic-pink" },
+    { icon: Award, label: "Years Experience", value: "2+", color: "text-cosmic-teal" }
   ]
 
   return (
@@ -24,21 +24,21 @@ export function About() {
 
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                We are <span className="aurora-text font-semibold">Prabhav Sharma & Vanshika</span>, 
-                freelance data and AI consultants helping businesses turn data into action. Based in 
+                We are <span className="aurora-text font-semibold">Protonest</span> - a data analytics and AI automation team 
+                helping startups and businesses turn data into action. Based in 
                 <span className="text-cosmic-teal font-semibold"> New Delhi & Noida</span>, we work 
                 <span className="text-cosmic-purple font-semibold"> remotely with clients worldwide</span>, 
-                providing complete analytics solutions from dashboard automation to AI agent deployment.
+                providing complete analytics solutions, AI chatbot integrations, and modern web development.
               </p>
               
               <p>
-                With strong experience in tools like <span className="text-cosmic-teal font-mono">Python</span>, 
-                <span className="text-cosmic-purple font-mono"> Advanced Excel</span>, 
-                <span className="text-cosmic-pink font-mono"> Power BI</span>, 
-                <span className="text-cosmic-blue font-mono"> FastAPI</span>, and 
-                <span className="text-cosmic-gold font-mono"> Streamlit</span>, we specialize in transforming 
-                messy datasets into clean, actionable insights. Our Excel expertise includes advanced data cleaning, 
-                pivot table automation, VBA scripting, and complex formula optimization.
+                Our expertise spans <span className="text-cosmic-teal font-mono">Data Analytics</span>, 
+                <span className="text-cosmic-purple font-mono"> Dashboard Building</span>, 
+                <span className="text-cosmic-pink font-mono"> AI Chatbots for Websites</span>, 
+                <span className="text-cosmic-blue font-mono"> Web Development</span>, and 
+                <span className="text-cosmic-gold font-mono"> Automation Solutions</span>. We offer flexible engagement 
+                through online meetings for project discussions and on-site consultations when needed. Pricing is 
+                customized based on project scope and requirements.
               </p>
               
               <p>

@@ -46,9 +46,9 @@ export function Services() {
     },
     {
       icon: TrendingUp,
-      title: "Data Strategy Consulting",
-      description: "Strategic guidance on data architecture, analytics roadmaps, and AI implementation for your business growth.",
-      features: ["Data Architecture", "Analytics Strategy", "AI Roadmap", "Business Intelligence"],
+      title: "Data Analytics & Dashboard Building",
+      description: "Transform raw data into actionable insights with interactive dashboards, KPI tracking, and automated reporting solutions.",
+      features: ["Data Analytics", "Dashboard Building", "AI Chatbots for Websites", "Business Intelligence"],
       color: "text-cosmic-blue",
       gradient: "from-cosmic-blue/20 to-cosmic-purple/10"
     }

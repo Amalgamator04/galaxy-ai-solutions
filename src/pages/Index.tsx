@@ -1,6 +1,7 @@
 import React from 'react'
+import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar'
+import { AppSidebar } from '@/components/AppSidebar'
 import { GalacticBackground } from '@/components/GalacticBackground'
-import { Navbar } from '@/components/Navbar'
 import { Hero } from '@/components/Hero'
 import { About } from '@/components/About'
 import { Skills } from '@/components/Skills'
@@ -14,20 +15,26 @@ import { Footer } from '@/components/Footer'
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <GalacticBackground />
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Services />
-      <ExcelExpertise />
-      <Team />
-      <Projects />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </div>
+    <SidebarProvider defaultOpen={true}>
+      <div className="min-h-screen flex w-full bg-background">
+        <GalacticBackground />
+        <AppSidebar />
+        <SidebarInset>
+          <div className="flex-1">
+            <Hero />
+            <About />
+            <Skills />
+            <Services />
+            <ExcelExpertise />
+            <Team />
+            <Projects />
+            <Testimonials />
+            <Contact />
+            <Footer />
+          </div>
+        </SidebarInset>
+      </div>
+    </SidebarProvider>
   );
 };
 

@@ -150,7 +150,8 @@ export default {
 				'meteor': 'meteor 3s linear infinite',
 				'day-night-cycle': 'day-night-cycle 60s linear infinite',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'scale-in': 'scale-in 0.4s ease-out'
+				'scale-in': 'scale-in 0.4s ease-out',
+				'scroll-bg': 'scroll-bg 20s linear infinite'
 			}
 		}
 	},

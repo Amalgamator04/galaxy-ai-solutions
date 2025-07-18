@@ -20,10 +20,10 @@ export function Hero() {
               Data Analytics & AI Automation
             </p>
             <h1 className="text-5xl md:text-7xl font-bold gradient-text leading-tight">
-              Prabhav & Vanshika
+              Analytics, AI Chatbots Agents and Web Developers
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-light">
-              Freelance Consultants Turning Data Into Action
+              Protonest - Turning Data Into Action with AI-Powered Solutions
             </p>
           </div>
 
@@ -31,8 +31,8 @@ export function Hero() {
             <p className="text-lg text-muted-foreground leading-relaxed">
               Based in <span className="text-cosmic-teal font-semibold">New Delhi & Noida</span>, 
               working <span className="text-cosmic-purple font-semibold">remotely with clients worldwide</span>. 
-              From Excel data cleaning and automation to deploying intelligent AI systems, we provide 
-              complete analytics solutions with expertise in Python, Power BI, FastAPI, and advanced Excel techniques.
+              We specialize in web development with AI chatbot support for startups and businesses, data analytics, 
+              dashboard building, and intelligent automation solutions. Available for online meetings and on-site consultations.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 text-sm">

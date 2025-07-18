@@ -43,10 +43,17 @@ export function Contact() {
       color: "text-cosmic-blue"
     },
     {
+      icon: Phone,
+      label: "Phone 2",
+      value: "+91 8851402795",
+      href: "tel:+918851402795",
+      color: "text-cosmic-blue"
+    },
+    {
       icon: Mail,
       label: "Email",
-      value: "contact@prabhavvanshika.dev",
-      href: "mailto:contact@prabhavvanshika.dev",
+      value: "protonest@gmail.com",
+      href: "mailto:protonest@gmail.com",
       color: "text-cosmic-purple"
     },
     {
