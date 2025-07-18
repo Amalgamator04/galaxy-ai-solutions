@@ -46,7 +46,7 @@ export function Navbar() {
               <Zap className="w-5 h-5 text-white" />
             </div>
             <div className="font-bold text-lg gradient-text">
-              P&V Analytics
+              Protonest
             </div>
           </div>
 
