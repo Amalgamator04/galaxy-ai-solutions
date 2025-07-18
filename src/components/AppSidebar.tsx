@@ -1,15 +1,4 @@
 import { Home, User, Briefcase, Wrench, Users, FolderOpen, MessageSquare, Phone, Zap } from 'lucide-react'
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar"
 
 const items = [
   { title: "Home", url: "#", icon: Home },
@@ -35,9 +24,9 @@ export function AppSidebar() {
   }
 
   return (
-    <Sidebar side="left" className="glass-strong border-r border-white/20">
-      <SidebarHeader className="p-6">
-        <div className="flex items-center space-x-2">
+    <div className="fixed left-0 top-0 h-full w-64 glass-strong border-r border-white/20 z-40">
+      <div className="p-6">
+        <div className="flex items-center space-x-2 mb-8">
           <div className="w-8 h-8 cosmic-bg rounded-lg flex items-center justify-center">
             <Zap className="w-5 h-5 text-white" />
           </div>
@@ -45,28 +34,20 @@ export function AppSidebar() {
             Protonest
           </div>
         </div>
-      </SidebarHeader>
-      
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton 
-                    onClick={() => scrollToSection(item.url)}
-                    className="w-full justify-start"
-                  >
-                    <item.icon className="mr-2 h-4 w-4" />
-                    <span>{item.title}</span>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
-    </Sidebar>
+        
+        <nav className="space-y-2">
+          {items.map((item) => (
+            <button
+              key={item.title}
+              onClick={() => scrollToSection(item.url)}
+              className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
+            >
+              <item.icon className="w-4 h-4" />
+              <span>{item.title}</span>
+            </button>
+          ))}
+        </nav>
+      </div>
+    </div>
   )
 }
