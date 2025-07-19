@@ -9,7 +9,7 @@ export function Team() {
       role: "Lead Frontend Developer & AI Specialist",
       description: "Specializes in frontend development, React applications, and AI integrations. Expert in modern web technologies, responsive design, and turning complex requirements into beautiful user experiences.",
       avatar: "👨‍💻",
-      skills: ["React", "JavaScript/TypeScript", "Frontend Development", "AI Integration"],
+      skills: ["React", "Data Scientist", "Frontend Development", "Data Analytics"],
       expertise: ["Web Development", "UI/UX Design", "API Integration", "AI Solutions"],
       gradient: "from-cosmic-blue to-cosmic-purple"
     },

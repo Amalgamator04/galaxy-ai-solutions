@@ -66,8 +66,8 @@ export function Contact() {
   ]
 
   const serviceAreas = [
-    { city: "New Delhi", emoji: "🏛️", description: "Headquarters & Base Location" },
-    { city: "Noida", emoji: "🏢", description: "Secondary Office & Tech Hub" },
+    { city: "New Delhi", emoji: "🏛️", description: "Base Location & Headquarters" },
+    { city: "Noida", emoji: "🏢", description: "Base Location & Tech Hub" },
     { city: "Remote Work", emoji: "🌐", description: "Worldwide Client Support" },
     { city: "Consultations", emoji: "💼", description: "Virtual & On-site Available" }
   ]
