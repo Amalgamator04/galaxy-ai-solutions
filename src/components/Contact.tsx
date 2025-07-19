@@ -52,8 +52,8 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "protonest@gmail.com",
-      href: "mailto:protonest@gmail.com",
+      value: "protonest1@gmail.com",
+      href: "mailto:protonest1@gmail.com",
       color: "text-cosmic-purple"
     },
     {
