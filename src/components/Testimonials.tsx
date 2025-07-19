@@ -22,15 +22,6 @@ export function Testimonials() {
       color: "text-cosmic-purple"
     },
     {
-      name: "Rohit",
-      location: "Jaipur",
-      role: "Tech Lead",
-      content: "Clean UI, solid data work, and fast delivery. The team delivered exactly what we needed with professional code quality and excellent documentation.",
-      rating: 5,
-      emoji: "🔍",
-      color: "text-cosmic-pink"
-    },
-    {
       name: "Sneha",
       location: "Bengaluru",
       role: "Data Analyst",
@@ -38,24 +29,6 @@ export function Testimonials() {
       rating: 5,
       emoji: "📈",
       color: "text-cosmic-teal"
-    },
-    {
-      name: "Amit",
-      location: "Delhi",
-      role: "Startup Founder",
-      content: "From concept to deployment in record time. They understood our vision perfectly and delivered an AI solution that actually drives business value.",
-      rating: 5,
-      emoji: "🚀",
-      color: "text-cosmic-gold"
-    },
-    {
-      name: "Priya",
-      location: "International",
-      role: "Operations Director, UAE",
-      content: "Working across time zones was seamless. The Excel automation saved us 20 hours per week. What used to take our team days now happens automatically with beautiful reports delivered daily.",
-      rating: 5,
-      emoji: "⚡",
-      color: "text-cosmic-blue"
     }
   ]
 

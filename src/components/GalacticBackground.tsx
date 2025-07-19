@@ -94,11 +94,52 @@ export function GalacticBackground() {
         />
       ))}
 
-      {/* Floating cosmic particles */}
+      {/* Space Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {/* Floating planets */}
+        {[...Array(3)].map((_, i) => (
           <div
-            key={i}
+            key={`planet-${i}`}
+            className={`absolute rounded-full transition-opacity duration-1000 ${
+              isDay ? 'opacity-40' : 'opacity-70'
+            }`}
+            style={{
+              left: `${20 + i * 30}%`,
+              top: `${10 + i * 25}%`,
+              width: `${15 + i * 5}px`,
+              height: `${15 + i * 5}px`,
+              background: `conic-gradient(from 0deg, hsl(${240 + i * 60}, 60%, 60%), hsl(${300 + i * 60}, 50%, 50%))`,
+              animation: `floatSlow ${8 + i * 2}s ease-in-out infinite ${i * 1}s`,
+              boxShadow: '0 0 20px rgba(138, 43, 226, 0.4)'
+            }}
+          />
+        ))}
+        
+        {/* Floating satellites */}
+        {[...Array(4)].map((_, i) => (
+          <div
+            key={`satellite-${i}`}
+            className={`absolute transition-opacity duration-1000 ${
+              isDay ? 'opacity-30' : 'opacity-60'
+            }`}
+            style={{
+              left: `${10 + i * 20}%`,
+              top: `${30 + i * 15}%`,
+              width: '8px',
+              height: '8px',
+              background: 'linear-gradient(45deg, #00bcd4, #e91e63)',
+              borderRadius: '2px',
+              animation: `floatMedium ${5 + i * 1.5}s ease-in-out infinite ${i * 0.5}s`,
+              transform: 'rotate(45deg)',
+              boxShadow: '0 0 10px rgba(0, 188, 212, 0.6)'
+            }}
+          />
+        ))}
+        
+        {/* Floating cosmic particles */}
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={`particle-${i}`}
             className={`absolute w-2 h-2 rounded-full transition-opacity duration-1000 ${
               isDay 
                 ? 'bg-white/20 opacity-30' 
@@ -108,6 +149,27 @@ export function GalacticBackground() {
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animation: `float ${6 + Math.random() * 4}s ease-in-out infinite ${Math.random() * 2}s`
+            }}
+          />
+        ))}
+        
+        {/* Meteors */}
+        {[...Array(2)].map((_, i) => (
+          <div
+            key={`meteor-${i}`}
+            className={`absolute transition-opacity duration-1000 ${
+              isDay ? 'opacity-20' : 'opacity-50'
+            }`}
+            style={{
+              left: `${80 + i * 10}%`,
+              top: `${5 + i * 30}%`,
+              width: '3px',
+              height: '20px',
+              background: 'linear-gradient(to bottom, transparent, #ffffff, transparent)',
+              borderRadius: '50%',
+              animation: `meteor ${3 + i}s linear infinite ${i * 2}s`,
+              transform: 'rotate(45deg)',
+              boxShadow: '0 0 6px rgba(255, 255, 255, 0.8)'
             }}
           />
         ))}

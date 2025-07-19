@@ -57,13 +57,6 @@ export function Contact() {
       color: "text-cosmic-purple"
     },
     {
-      icon: Github,
-      label: "GitHub",
-      value: "amalgamator04",
-      href: "https://github.com/amalgamator04",
-      color: "text-cosmic-pink"
-    },
-    {
       icon: ExternalLink,
       label: "Portfolio",
       value: "View Live Projects",
@@ -93,69 +86,10 @@ export function Contact() {
           <div className="w-24 h-1 bg-cosmic-gradient rounded-full mx-auto" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
-          <div className="cosmic-card">
-            <h3 className="text-2xl font-semibold mb-6 gradient-text">
-              Send us a message
-            </h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  Your Name
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Enter your full name"
-                  className="glass-strong"
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  Email Address
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your.email@example.com"
-                  className="glass-strong"
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
-                  Project Details
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about your project, data challenges, or how we can help..."
-                  className="glass-strong min-h-[120px]"
-                  required
-                />
-              </div>
-
-              <Button type="submit" size="lg" className="w-full cosmic-button group">
-                Send Message
-                <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </form>
-          </div>
+        <div className="grid lg:grid-cols-1 gap-16">
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-8 max-w-2xl mx-auto">
             {/* Contact Details */}
             <div className="cosmic-card">
               <h3 className="text-2xl font-semibold mb-6 gradient-text">
