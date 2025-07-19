@@ -63,7 +63,7 @@ export function Services() {
             Services We Offer
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive data and AI solutions tailored to your business needs
+            Comprehensive web development and AI solutions from our Delhi & Noida base locations
           </p>
           <div className="w-24 h-1 bg-cosmic-gradient rounded-full mx-auto" />
         </div>

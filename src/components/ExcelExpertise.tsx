@@ -149,8 +149,8 @@ export function ExcelExpertise() {
                 <div className="text-xs text-muted-foreground">Accuracy</div>
               </div>
               <div className="space-y-1">
-                <div className="text-2xl font-bold text-cosmic-purple">₹2L+</div>
-                <div className="text-xs text-muted-foreground">Annual Savings</div>
+                <div className="text-2xl font-bold text-cosmic-purple">50K+</div>
+                <div className="text-xs text-muted-foreground">Cost Reduction</div>
               </div>
             </div>
           </div>

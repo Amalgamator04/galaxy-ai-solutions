@@ -6,11 +6,11 @@ export function Team() {
   const teamMembers = [
     {
       name: "Prabhav Sharma",
-      role: "Lead Data Scientist & Developer",
-      description: "Specializes in machine learning, FastAPI development, and end-to-end AI solutions. Expert in Python, data modeling, and turning complex algorithms into production-ready applications.",
+      role: "Lead Frontend Developer & AI Specialist",
+      description: "Specializes in frontend development, React applications, and AI integrations. Expert in modern web technologies, responsive design, and turning complex requirements into beautiful user experiences.",
       avatar: "👨‍💻",
-      skills: ["Python", "FastAPI", "Machine Learning", "Data Engineering"],
-      expertise: ["ML Models", "API Development", "Data Pipeline", "AI Agents"],
+      skills: ["React", "JavaScript/TypeScript", "Frontend Development", "AI Integration"],
+      expertise: ["Web Development", "UI/UX Design", "API Integration", "AI Solutions"],
       gradient: "from-cosmic-blue to-cosmic-purple"
     },
     {
@@ -40,7 +40,7 @@ export function Team() {
             Meet Our Team
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Passionate data scientists and developers dedicated to transforming your business with AI
+            Passionate developers and data experts based in Delhi & Noida, serving clients globally
           </p>
           <div className="w-24 h-1 bg-cosmic-gradient rounded-full mx-auto" />
         </div>
@@ -55,9 +55,11 @@ export function Team() {
             >
               {/* Avatar */}
               <div className="relative mx-auto w-32 h-32">
-                <div className={`w-full h-full rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center text-6xl shadow-glow`}>
-                  {member.avatar}
-                </div>
+                <img 
+                  src={member.name === "Prabhav Sharma" ? "/src/assets/prabhav-profile.jpg" : "/src/assets/vanshika-profile.jpg"}
+                  alt={member.name}
+                  className={`w-full h-full rounded-full object-cover bg-gradient-to-br ${member.gradient} shadow-glow`}
+                />
                 <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-cosmic-teal rounded-full flex items-center justify-center">
                   <div className="w-3 h-3 bg-background rounded-full" />
                 </div>
