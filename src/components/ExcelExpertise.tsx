@@ -104,57 +104,6 @@ export function ExcelExpertise() {
           })}
         </div>
 
-        {/* Case Study Example */}
-        <div className="cosmic-card max-w-4xl mx-auto">
-          <h3 className="text-2xl font-semibold text-center mb-8 gradient-text">
-            Excel Transformation Case Study
-          </h3>
-          
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-red-400">❌ Before: The Problem</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Manual data entry taking 8 hours/week</li>
-                  <li>• Inconsistent formatting across 50+ sheets</li>
-                  <li>• Missing data and duplicate entries</li>
-                  <li>• No automated reporting</li>
-                  <li>• Error-prone manual calculations</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-green-400">✅ After: The Solution</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Automated data import and cleaning</li>
-                  <li>• Standardized templates with validation</li>
-                  <li>• Smart duplicate detection and removal</li>
-                  <li>• Daily automated reports via email</li>
-                  <li>• Real-time dashboard with KPIs</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-border/50 text-center">
-            <div className="grid grid-cols-3 gap-4">
-              <div className="space-y-1">
-                <div className="text-2xl font-bold text-cosmic-gold">95%</div>
-                <div className="text-xs text-muted-foreground">Time Saved</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-2xl font-bold text-cosmic-teal">100%</div>
-                <div className="text-xs text-muted-foreground">Accuracy</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-2xl font-bold text-cosmic-purple">50K+</div>
-                <div className="text-xs text-muted-foreground">Cost Reduction</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )
