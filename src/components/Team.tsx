@@ -28,7 +28,7 @@ export function Team() {
     { icon: Code, label: "Full-Stack Development", color: "text-cosmic-blue" },
     { icon: BarChart, label: "Data Visualization", color: "text-cosmic-purple" },
     { icon: Brain, label: "AI & Machine Learning", color: "text-cosmic-pink" },
-    { icon: Database, label: "Data Engineering", color: "text-cosmic-teal" }
+    { icon: Database, label: "Database Solutions", color: "text-cosmic-teal" }
   ]
 
   return (

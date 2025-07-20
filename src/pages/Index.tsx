@@ -3,7 +3,7 @@ import { GalacticBackground } from '@/components/GalacticBackground'
 import { Navbar } from '@/components/Navbar'
 import { Hero } from '@/components/Hero'
 import { About } from '@/components/About'
-import { Skills } from '@/components/Skills'
+import { Technologies } from '@/components/Technologies'
 import { Services } from '@/components/Services'
 import { ExcelExpertise } from '@/components/ExcelExpertise'
 import { Team } from '@/components/Team'
@@ -19,7 +19,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
-      <Skills />
+      <Technologies />
       <Services />
       <ExcelExpertise />
       <Team />
