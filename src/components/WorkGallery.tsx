@@ -1,71 +1,69 @@
-import React, { useState } from 'react'
-import { Upload, X, Edit3, Save, Plus } from 'lucide-react'
+import React from 'react'
+import { ExternalLink, Eye } from 'lucide-react'
 import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { Textarea } from './ui/textarea'
-import { useToast } from '@/hooks/use-toast'
 
 interface WorkItem {
   id: string
   image: string
   title: string
   description: string
+  category: string
+  technologies: string[]
 }
 
 export function WorkGallery() {
-  const [workItems, setWorkItems] = useState<WorkItem[]>([])
-  const [editingId, setEditingId] = useState<string | null>(null)
-  const [editForm, setEditForm] = useState({ title: '', description: '' })
-  const { toast } = useToast()
-
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (file) {
-      const reader = new FileReader()
-      reader.onload = (e) => {
-        const newItem: WorkItem = {
-          id: Date.now().toString(),
-          image: e.target?.result as string,
-          title: 'New Project',
-          description: 'Click edit to add description...'
-        }
-        setWorkItems(prev => [...prev, newItem])
-        toast({
-          title: "Image Added!",
-          description: "Click edit to add title and description.",
-        })
-      }
-      reader.readAsDataURL(file)
+  const workItems: WorkItem[] = [
+    {
+      id: '1',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      title: 'Sales Analytics Dashboard',
+      description: 'Comprehensive Power BI dashboard tracking sales performance, customer insights, and revenue trends with interactive visualizations and real-time data updates.',
+      category: 'Data Visualization',
+      technologies: ['Power BI', 'SQL', 'Excel']
+    },
+    {
+      id: '2', 
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+      title: 'Excel Automation System',
+      description: 'Automated data processing system that reduced manual work by 90%. Features include data validation, automated reporting, and dynamic chart generation.',
+      category: 'Process Automation',
+      technologies: ['Excel VBA', 'Power Query', 'Pivot Tables']
+    },
+    {
+      id: '3',
+      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
+      title: 'Customer Segmentation Analysis',
+      description: 'Machine learning-powered customer segmentation analysis helping businesses identify key customer groups and optimize marketing strategies.',
+      category: 'Machine Learning',
+      technologies: ['Python', 'Scikit-learn', 'Matplotlib']
+    },
+    {
+      id: '4',
+      image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&h=600&fit=crop',
+      title: 'Financial KPI Dashboard',
+      description: 'Executive-level financial dashboard providing real-time insights into revenue, expenses, profit margins, and key performance indicators.',
+      category: 'Business Intelligence',
+      technologies: ['Tableau', 'SQL Server', 'DAX']
+    },
+    {
+      id: '5',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+      title: 'Inventory Management System',
+      description: 'Smart inventory tracking system with predictive analytics for stock optimization, automated reordering, and supply chain insights.',
+      category: 'Analytics System',
+      technologies: ['Python', 'Pandas', 'Streamlit']
+    },
+    {
+      id: '6',
+      image: 'https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?w=800&h=600&fit=crop',
+      title: 'Social Media Analytics',
+      description: 'Comprehensive social media performance tracking with sentiment analysis, engagement metrics, and competitor benchmarking.',
+      category: 'Social Analytics',
+      technologies: ['Python', 'NLP', 'Power BI']
     }
-  }
+  ]
 
-  const handleEdit = (item: WorkItem) => {
-    setEditingId(item.id)
-    setEditForm({ title: item.title, description: item.description })
-  }
-
-  const handleSave = () => {
-    if (editingId) {
-      setWorkItems(prev => prev.map(item => 
-        item.id === editingId 
-          ? { ...item, title: editForm.title, description: editForm.description }
-          : item
-      ))
-      setEditingId(null)
-      toast({
-        title: "Updated!",
-        description: "Work item has been updated successfully.",
-      })
-    }
-  }
-
-  const handleDelete = (id: string) => {
-    setWorkItems(prev => prev.filter(item => item.id !== id))
-    toast({
-      title: "Deleted!",
-      description: "Work item has been removed.",
-    })
-  }
+  const categories = [...new Set(workItems.map(item => item.category))]
 
   return (
     <section id="work-gallery" className="section-padding">
@@ -81,134 +79,100 @@ export function WorkGallery() {
           <div className="w-24 h-1 bg-cosmic-gradient rounded-full mx-auto" />
         </div>
 
-        {/* Upload Section */}
-        <div className="cosmic-card max-w-2xl mx-auto mb-16">
-          <div className="text-center space-y-6">
-            <div className="w-20 h-20 mx-auto bg-cosmic-blue/20 rounded-2xl flex items-center justify-center">
-              <Upload className="w-10 h-10 text-cosmic-blue" />
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Add New Work</h3>
-              <p className="text-muted-foreground text-sm">
-                Upload images of your projects, dashboards, or analytics work
-              </p>
-            </div>
-            <div>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="hidden"
-                id="image-upload"
-              />
-              <label htmlFor="image-upload">
-                <Button className="cosmic-button" asChild>
-                  <span>
-                    <Plus className="w-4 h-4 mr-2" />
-                    Upload Image
-                  </span>
-                </Button>
-              </label>
-            </div>
-          </div>
+        {/* Category Tags */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map((category) => (
+            <span
+              key={category}
+              className="skill-badge"
+            >
+              {category}
+            </span>
+          ))}
         </div>
 
         {/* Work Items Grid */}
-        {workItems.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {workItems.map((item, index) => (
-              <div
-                key={item.id}
-                className="cosmic-card space-y-4"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Image */}
-                <div className="relative group">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-48 object-cover rounded-xl"
-                  />
-                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Button
-                      size="icon"
-                      variant="destructive"
-                      className="w-8 h-8"
-                      onClick={() => handleDelete(item.id)}
-                    >
-                      <X className="w-4 h-4" />
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="space-y-3">
-                  {editingId === item.id ? (
-                    /* Edit Mode */
-                    <div className="space-y-3">
-                      <Input
-                        value={editForm.title}
-                        onChange={(e) => setEditForm(prev => ({ ...prev, title: e.target.value }))}
-                        placeholder="Project title..."
-                        className="font-semibold"
-                      />
-                      <Textarea
-                        value={editForm.description}
-                        onChange={(e) => setEditForm(prev => ({ ...prev, description: e.target.value }))}
-                        placeholder="Project description..."
-                        rows={3}
-                      />
-                      <div className="flex gap-2">
-                        <Button size="sm" onClick={handleSave} className="cosmic-button">
-                          <Save className="w-3 h-3 mr-1" />
-                          Save
-                        </Button>
-                        <Button 
-                          size="sm" 
-                          variant="outline" 
-                          onClick={() => setEditingId(null)}
-                        >
-                          Cancel
-                        </Button>
-                      </div>
-                    </div>
-                  ) : (
-                    /* View Mode */
-                    <div className="space-y-3">
-                      <div className="flex items-start justify-between">
-                        <h3 className="font-semibold text-lg">{item.title}</h3>
-                        <Button
-                          size="icon"
-                          variant="ghost"
-                          className="w-8 h-8 opacity-60 hover:opacity-100"
-                          onClick={() => handleEdit(item)}
-                        >
-                          <Edit3 className="w-3 h-3" />
-                        </Button>
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  )}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {workItems.map((item, index) => (
+            <div
+              key={item.id}
+              className="cosmic-card space-y-4 group hover:scale-105 transition-transform duration-300"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Image */}
+              <div className="relative overflow-hidden rounded-xl">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Button size="icon" variant="ghost" className="text-white hover:bg-white/20">
+                    <Eye className="w-5 h-5" />
+                  </Button>
                 </div>
               </div>
-            ))}
-          </div>
-        ) : (
-          /* Empty State */
-          <div className="cosmic-card max-w-md mx-auto text-center space-y-4">
-            <div className="w-16 h-16 mx-auto bg-muted rounded-2xl flex items-center justify-center">
-              <Upload className="w-8 h-8 text-muted-foreground" />
+
+              {/* Content */}
+              <div className="space-y-3">
+                <div className="flex items-start justify-between">
+                  <span className="text-xs px-2 py-1 rounded-full bg-cosmic-blue/20 text-cosmic-blue">
+                    {item.category}
+                  </span>
+                </div>
+                
+                <h3 className="font-semibold text-lg group-hover:text-cosmic-blue transition-colors">
+                  {item.title}
+                </h3>
+                
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {item.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-1">
+                  {item.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* View Button */}
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full cosmic-button group-hover:bg-cosmic-blue group-hover:text-white transition-colors"
+                >
+                  <ExternalLink className="w-3 h-3 mr-2" />
+                  View Project
+                </Button>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold mb-2">No work items yet</h3>
-              <p className="text-muted-foreground text-sm">
-                Upload your first project image to get started
-              </p>
-            </div>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <div className="cosmic-card max-w-2xl mx-auto">
+            <h3 className="text-2xl font-semibold mb-4 gradient-text">
+              Ready for Your Custom Solution?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Each project is tailored to meet specific business needs. Let's discuss how we can create a similar solution for your organization.
+            </p>
+            <Button 
+              size="lg" 
+              className="cosmic-button"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Start Your Project
+            </Button>
           </div>
-        )}
+        </div>
       </div>
     </section>
   )
