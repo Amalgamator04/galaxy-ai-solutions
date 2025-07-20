@@ -1,6 +1,7 @@
-import React from 'react'
-import { ExternalLink, Eye } from 'lucide-react'
+import React, { useState } from 'react'
+import { ExternalLink, Eye, X } from 'lucide-react'
 import { Button } from './ui/button'
+import { Dialog, DialogContent, DialogTitle } from './ui/dialog'
 
 interface WorkItem {
   id: string
@@ -12,6 +13,7 @@ interface WorkItem {
 }
 
 export function WorkGallery() {
+  const [selectedImage, setSelectedImage] = useState<WorkItem | null>(null)
   const workItems: WorkItem[] = [
     {
       id: '1',
@@ -100,7 +102,7 @@ export function WorkGallery() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
-              <div className="relative overflow-hidden rounded-xl">
+              <div className="relative overflow-hidden rounded-xl cursor-pointer" onClick={() => setSelectedImage(item)}>
                 <img
                   src={item.image}
                   alt={item.title}
@@ -173,6 +175,53 @@ export function WorkGallery() {
             </Button>
           </div>
         </div>
+
+        {/* Image Modal */}
+        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+          <DialogContent className="max-w-4xl w-full max-h-[90vh] p-0">
+            <DialogTitle className="sr-only">
+              {selectedImage?.title || 'Project Image'}
+            </DialogTitle>
+            {selectedImage && (
+              <div className="relative">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-4 right-4 z-10 bg-black/20 hover:bg-black/40 text-white"
+                  onClick={() => setSelectedImage(null)}
+                >
+                  <X className="w-4 h-4" />
+                </Button>
+                <img
+                  src={selectedImage.image}
+                  alt={selectedImage.title}
+                  className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+                />
+                <div className="p-6 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold">{selectedImage.title}</h3>
+                    <span className="text-xs px-3 py-1 rounded-full bg-cosmic-blue/20 text-cosmic-blue">
+                      {selectedImage.category}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {selectedImage.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedImage.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   )
