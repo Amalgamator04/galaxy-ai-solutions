@@ -59,10 +59,10 @@ export function Services() {
       <div className="container-width">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text">
             Services We Offer
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             Comprehensive web development and AI solutions from our Delhi & Noida base locations
           </p>
           <div className="w-24 h-1 bg-cosmic-gradient rounded-full mx-auto" />

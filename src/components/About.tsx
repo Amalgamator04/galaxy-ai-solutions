@@ -16,13 +16,13 @@ export function About() {
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text">
                 About Us
               </h2>
               <div className="w-24 h-1 bg-cosmic-gradient rounded-full" />
             </div>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
               <p>
                 We are <span className="aurora-text font-semibold">Protonest</span> - a data analytics and AI automation team 
                 helping startups and businesses turn data into action. Based in 

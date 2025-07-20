@@ -4,7 +4,7 @@ import { Button } from './ui/button'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center section-padding">
+    <section className="relative min-h-[80vh] sm:min-h-screen flex items-center justify-center section-padding">
       <div className="container-width text-center space-y-8">
         {/* Floating Icons */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -19,10 +19,10 @@ export function Hero() {
             <p className="text-cosmic-teal font-mono text-sm uppercase tracking-wider">
               Data Analytics & AI Automation
             </p>
-            <h1 className="text-5xl md:text-7xl font-bold gradient-text leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold gradient-text leading-tight">
               Analytics, AI Chatbots Agents and Web Developers
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-light">
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-light">
               Protonest - Turning Data Into Action with AI-Powered Solutions
             </p>
           </div>

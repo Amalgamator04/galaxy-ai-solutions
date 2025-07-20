@@ -174,7 +174,7 @@
   }
   
   .cosmic-card {
-    @apply glass rounded-2xl p-6 transition-all duration-300 hover:scale-105;
+    @apply glass rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:scale-105;
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
   }
   
@@ -240,7 +240,7 @@
   
   /* Service Card */
   .service-card {
-    @apply cosmic-card min-h-[300px] cursor-pointer;
+    @apply cosmic-card min-h-[250px] sm:min-h-[300px] cursor-pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     animation: fade-in-up 0.6s ease-out;
   }
@@ -340,10 +340,10 @@
   
   /* Responsive Utilities */
   .section-padding {
-    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+    @apply px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 xl:py-24;
   }
   
   .container-width {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }

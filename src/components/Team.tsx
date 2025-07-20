@@ -42,10 +42,10 @@ export function Team() {
       <div className="container-width">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text">
             Meet Our Team
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             Passionate developers and data experts based in Delhi & Noida, serving clients globally
           </p>
           <div className="w-24 h-1 bg-cosmic-gradient rounded-full mx-auto" />
@@ -60,7 +60,7 @@ export function Team() {
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Avatar */}
-              <div className="relative mx-auto w-32 h-32">
+              <div className="relative mx-auto w-24 h-24 sm:w-32 sm:h-32">
                 {member.image ? (
                   <img 
                     src={member.image}

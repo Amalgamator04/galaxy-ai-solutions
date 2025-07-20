@@ -61,10 +61,10 @@ export function ExcelExpertise() {
           <div className="flex justify-center">
             <FileSpreadsheet className="w-16 h-16 text-cosmic-gold mb-4" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text">
             Excel Analytics Mastery
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             From chaotic spreadsheets to intelligent analytics systems - we transform your Excel workflows 
             with advanced data cleaning, automation, and analytics capabilities.
           </p>

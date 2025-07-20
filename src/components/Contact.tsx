@@ -77,10 +77,10 @@ export function Contact() {
       <div className="container-width">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text">
             Let's Build Something Amazing
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             Ready to transform your data into actionable insights? Let's discuss your project.
           </p>
           <div className="w-24 h-1 bg-cosmic-gradient rounded-full mx-auto" />
