@@ -10,6 +10,7 @@ import { Team } from '@/components/Team'
 import { Projects } from '@/components/Projects'
 import { Testimonials } from '@/components/Testimonials'
 import { Contact } from '@/components/Contact'
+import { WorkGallery } from '@/components/WorkGallery'
 import { Footer } from '@/components/Footer'
 
 const Index = () => {
@@ -25,6 +26,7 @@ const Index = () => {
       <Team />
       <Projects />
       <Testimonials />
+      <WorkGallery />
       <Contact />
       <Footer />
     </div>
