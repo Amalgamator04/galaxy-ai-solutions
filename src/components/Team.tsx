@@ -2,6 +2,10 @@ import React from 'react'
 import { Github, Linkedin, Mail, Code, BarChart, Brain, Database } from 'lucide-react'
 import { Button } from './ui/button'
 
+// Import profile images
+import prabhavImage from '../assets/prabhav-profile.jpg'
+import vanshikaImage from '../assets/vanshika-profile.jpg'
+
 export function Team() {
   const teamMembers = [
     {
@@ -9,6 +13,7 @@ export function Team() {
       role: "Lead Frontend Developer & AI Specialist",
       description: "Specializes in frontend development, React applications, and AI integrations. Expert in modern web technologies, responsive design, and turning complex requirements into beautiful user experiences.",
       avatar: "👨‍💻",
+      image: prabhavImage,
       skills: ["React", "Data Scientist", "Frontend Development", "Data Analytics"],
       expertise: ["Web Development", "UI/UX Design", "API Integration", "AI Solutions"],
       gradient: "from-cosmic-blue to-cosmic-purple"
@@ -18,6 +23,7 @@ export function Team() {
       role: "Data Strategist & Dashboard Expert",
       description: "Masters in creating stunning data visualizations and business intelligence solutions. Expert in Power BI, Excel automation, and transforming raw data into actionable insights.",
       avatar: "👩‍💻",
+      image: vanshikaImage,
       skills: ["Power BI", "Excel Mastery", "Data Viz", "Business Intelligence"],
       expertise: ["Dashboard Design", "Data Strategy", "BI Solutions", "Analytics"],
       gradient: "from-cosmic-pink to-cosmic-teal"
@@ -55,11 +61,17 @@ export function Team() {
             >
               {/* Avatar */}
               <div className="relative mx-auto w-32 h-32">
-                <img 
-                  src={member.name === "Prabhav Sharma" ? "/src/assets/prabhav-profile.jpg" : "/src/assets/vanshika-profile.jpg"}
-                  alt={member.name}
-                  className={`w-full h-full rounded-full object-cover bg-gradient-to-br ${member.gradient} shadow-glow`}
-                />
+                {member.image ? (
+                  <img 
+                    src={member.image}
+                    alt={member.name}
+                    className={`w-full h-full rounded-full object-cover bg-gradient-to-br ${member.gradient} shadow-glow`}
+                  />
+                ) : (
+                  <div className={`w-full h-full rounded-full bg-gradient-to-br ${member.gradient} shadow-glow flex items-center justify-center text-4xl`}>
+                    {member.avatar}
+                  </div>
+                )}
                 <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-cosmic-teal rounded-full flex items-center justify-center">
                   <div className="w-3 h-3 bg-background rounded-full" />
                 </div>
