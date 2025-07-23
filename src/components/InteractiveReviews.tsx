@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
-import { Star, Send, User } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { Star, Send, User, Loader2 } from 'lucide-react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { Card, CardContent, CardHeader } from './ui/card'
 import { useToast } from '@/hooks/use-toast'
+import { supabase } from '@/integrations/supabase/client'
 
 interface Review {
   id: string
   name: string
   rating: number
   comment: string
-  timestamp: Date
+  created_at: string
 }
 
 export function InteractiveReviews() {
@@ -21,9 +22,38 @@ export function InteractiveReviews() {
     rating: 5,
     comment: ''
   })
+  const [loading, setLoading] = useState(true)
+  const [submitting, setSubmitting] = useState(false)
   const { toast } = useToast()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Load reviews on component mount
+  useEffect(() => {
+    loadReviews()
+  }, [])
+
+  const loadReviews = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('reviews')
+        .select('*')
+        .order('created_at', { ascending: false })
+
+      if (error) throw error
+      
+      setReviews(data || [])
+    } catch (error) {
+      console.error('Error loading reviews:', error)
+      toast({
+        title: "Error",
+        description: "Failed to load reviews. Please try refreshing the page.",
+        variant: "destructive"
+      })
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
     if (!newReview.name.trim() || !newReview.comment.trim()) {
@@ -35,21 +65,41 @@ export function InteractiveReviews() {
       return
     }
 
-    const review: Review = {
-      id: Date.now().toString(),
-      name: newReview.name,
-      rating: newReview.rating,
-      comment: newReview.comment,
-      timestamp: new Date()
-    }
+    setSubmitting(true)
 
-    setReviews(prev => [review, ...prev])
-    setNewReview({ name: '', rating: 5, comment: '' })
-    
-    toast({
-      title: "Review Added!",
-      description: "Thank you for your feedback. Your review has been posted.",
-    })
+    try {
+      const { data, error } = await supabase
+        .from('reviews')
+        .insert([{
+          name: newReview.name.trim(),
+          rating: newReview.rating,
+          comment: newReview.comment.trim()
+        }])
+        .select()
+
+      if (error) throw error
+
+      // Add the new review to the top of the list
+      if (data && data[0]) {
+        setReviews(prev => [data[0], ...prev])
+      }
+
+      setNewReview({ name: '', rating: 5, comment: '' })
+      
+      toast({
+        title: "Review Added!",
+        description: "Thank you for your feedback. Your review has been posted.",
+      })
+    } catch (error) {
+      console.error('Error submitting review:', error)
+      toast({
+        title: "Error",
+        description: "Failed to submit review. Please try again.",
+        variant: "destructive"
+      })
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const renderStars = (rating: number, interactive = false, onRatingChange?: (rating: number) => void) => {
@@ -132,9 +182,14 @@ export function InteractiveReviews() {
                   type="submit" 
                   className="w-full cosmic-button"
                   size="lg"
+                  disabled={submitting}
                 >
-                  <Send className="w-4 h-4 mr-2" />
-                  Submit Review
+                  {submitting ? (
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  ) : (
+                    <Send className="w-4 h-4 mr-2" />
+                  )}
+                  {submitting ? 'Submitting...' : 'Submit Review'}
                 </Button>
               </form>
             </CardContent>
@@ -142,7 +197,39 @@ export function InteractiveReviews() {
         </div>
 
         {/* Reviews Display */}
-        {reviews.length > 0 && (
+        {loading ? (
+          <div className="space-y-8">
+            <h3 className="text-3xl font-semibold text-center gradient-text">
+              Recent Reviews
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[...Array(3)].map((_, i) => (
+                <Card key={i} className="cosmic-card">
+                  <CardContent className="p-6">
+                    <div className="space-y-4 animate-pulse">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-muted rounded-full" />
+                        <div className="space-y-2 flex-1">
+                          <div className="h-4 bg-muted rounded w-3/4" />
+                          <div className="h-3 bg-muted rounded w-1/2" />
+                        </div>
+                      </div>
+                      <div className="flex space-x-1">
+                        {[...Array(5)].map((_, j) => (
+                          <div key={j} className="w-5 h-5 bg-muted rounded" />
+                        ))}
+                      </div>
+                      <div className="space-y-2">
+                        <div className="h-3 bg-muted rounded" />
+                        <div className="h-3 bg-muted rounded w-4/5" />
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        ) : reviews.length > 0 ? (
           <div className="space-y-8">
             <h3 className="text-3xl font-semibold text-center gradient-text">
               Recent Reviews
@@ -164,7 +251,7 @@ export function InteractiveReviews() {
                               {review.name}
                             </div>
                             <div className="text-sm text-muted-foreground">
-                              {review.timestamp.toLocaleDateString()}
+                              {new Date(review.created_at).toLocaleDateString()}
                             </div>
                           </div>
                         </div>
@@ -185,9 +272,7 @@ export function InteractiveReviews() {
               ))}
             </div>
           </div>
-        )}
-
-        {reviews.length === 0 && (
+        ) : (
           <div className="text-center py-12">
             <div className="w-16 h-16 bg-cosmic-gradient/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Star className="w-8 h-8 text-cosmic-gold" />
