@@ -113,13 +113,7 @@ export function Team() {
               {/* Contact */}
               <div className="flex justify-center space-x-3 pt-4">
                 <Button size="icon" variant="ghost" className="cosmic-button w-10 h-10">
-                  <Github className="w-4 h-4" />
-                </Button>
-                <Button size="icon" variant="ghost" className="cosmic-button w-10 h-10">
                   <Linkedin className="w-4 h-4" />
-                </Button>
-                <Button size="icon" variant="ghost" className="cosmic-button w-10 h-10">
-                  <Mail className="w-4 h-4" />
                 </Button>
               </div>
             </div>
