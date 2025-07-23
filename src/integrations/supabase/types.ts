@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      protonest: {
+        Row: {
+          created_at: string
+          id: number
+          Review: string | null
+          "Work Done": string[] | null
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          Review?: string | null
+          "Work Done"?: string[] | null
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          Review?: string | null
+          "Work Done"?: string[] | null
+        }
+        Relationships: []
+      }
+      reviews: {
+        Row: {
+          comment: string
+          created_at: string
+          id: string
+          name: string
+          rating: number
+          updated_at: string
+        }
+        Insert: {
+          comment: string
+          created_at?: string
+          id?: string
+          name: string
+          rating: number
+          updated_at?: string
+        }
+        Update: {
+          comment?: string
+          created_at?: string
+          id?: string
+          name?: string
+          rating?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
