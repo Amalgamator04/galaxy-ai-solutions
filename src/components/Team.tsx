@@ -1,5 +1,5 @@
 import React from 'react'
-import { Github, Linkedin, Mail, Code, BarChart, Brain, Database } from 'lucide-react'
+import { Github, Linkedin, Mail, Code, BarChart, Brain, Database, MessageSquare } from 'lucide-react'
 import { Button } from './ui/button'
 
 // Import profile images
@@ -31,7 +31,7 @@ export function Team() {
   ]
 
   const sharedSkills = [
-    { icon: Code, label: "Full-Stack Development", color: "text-cosmic-blue" },
+    { icon: MessageSquare, label: "Chatbots", color: "text-cosmic-blue" },
     { icon: BarChart, label: "Data Visualization", color: "text-cosmic-purple" },
     { icon: Brain, label: "AI & Machine Learning", color: "text-cosmic-pink" },
     { icon: Database, label: "Database Solutions", color: "text-cosmic-teal" }

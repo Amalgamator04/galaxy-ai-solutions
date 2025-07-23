@@ -8,7 +8,7 @@ import { Services } from '@/components/Services'
 import { ExcelExpertise } from '@/components/ExcelExpertise'
 import { Team } from '@/components/Team'
 import { Projects } from '@/components/Projects'
-import { Testimonials } from '@/components/Testimonials'
+import { InteractiveReviews } from '@/components/InteractiveReviews'
 import { Contact } from '@/components/Contact'
 import { WorkGallery } from '@/components/WorkGallery'
 import { Footer } from '@/components/Footer'
@@ -25,7 +25,7 @@ const Index = () => {
       <ExcelExpertise />
       <Team />
       <Projects />
-      <Testimonials />
+      <InteractiveReviews />
       <WorkGallery />
       <Contact />
       <Footer />
